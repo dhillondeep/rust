@@ -856,7 +856,7 @@ impl<'a> LoweringContext<'a> {
     }
 
     fn str_to_ident(&self, s: &'static str) -> Ident {
-        Ident::with_empty_ctxt(Symbol::gensym(s))
+        Ident::from_str(s).gensym()
     }
 
     fn with_anonymous_lifetime_mode<R>(
